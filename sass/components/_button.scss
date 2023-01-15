@@ -6,7 +6,7 @@
         display: inline-block;
         padding: 1.5rem 4rem;
         border-radius: 10rem;
-        font-size: 1.6rem;
+        font-size: $default-font-size;
         text-decoration: none;
         text-transform: uppercase;
         transition: transform .2s, box-shadow .2s;
@@ -52,5 +52,31 @@
     &--animated {
         animation: moveInBottom .5s ease-out .75s;
         animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+
+    &:link,
+    &:visited {
+        display: inline-block;
+        padding: 3px;
+        border-bottom: 1px solid $color-medium-green;
+        font-size: $default-font-size;
+        color: $color-medium-green;
+        text-decoration: none;
+        transition: color .2s, background-color .2s, box-shadow .2s;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+        color: $color-white;
+        background-color: $color-medium-green;
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
     }
 }
