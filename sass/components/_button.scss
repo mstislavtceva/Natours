@@ -28,8 +28,8 @@
     }
 
     &::after {
-        position: absolute;
         content: '';
+        position: absolute;
         display: inline-block;
         border-radius: 10rem;
         height: 100%;
@@ -46,6 +46,15 @@
 
         &::after {
             background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-medium-green;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-medium-green;
         }
     }
 
