@@ -5,3 +5,10 @@
         clear: both;
     }
 }
+
+@mixin center-horizonral-vertical ($top, $left, $transform) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: $transform;
+}

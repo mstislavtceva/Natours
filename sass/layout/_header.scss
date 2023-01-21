@@ -21,10 +21,7 @@
     }
 
     &__text {
-        position: absolute;
-        top: 40%;
-        left: 50%;
+        @include center-horizonral-vertical(40%, 50%, translate(-50%, -50%));
         text-align: center;
-        transform: translate(-50%, -50%);
     }
 }
