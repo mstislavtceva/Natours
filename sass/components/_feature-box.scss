@@ -8,6 +8,10 @@
     cursor: pointer;
     transition: transform .2s;
 
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
+
     &__icon {
         display: inline-block;
         margin-bottom: 0.5rem;
@@ -15,6 +19,10 @@
         color: transparent;
         background-image: linear-gradient(to right, $color-light-green, $color-dark-green);
         -webkit-background-clip: text;
+
+        @include respond(tab-port) {
+            margin-bottom: 0;
+        }
     }
 
     &__text {}

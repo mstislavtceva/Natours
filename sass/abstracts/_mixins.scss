@@ -12,3 +12,49 @@
     left: $left;
     transform: $transform;
 }
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px: Phone 
+600px - 900px: Tablet portrait 
+900px - 200px: Tablet Landscape
+[1200px - 1800px]: здесь наши стили применены
+1800px + : BIG DESCTOP
+
+$breakpoint arguemnt choices
+- phone
+- tab-port
+- tab-land
+- big-desctop
+
+1em = 16px
+*/
+@mixin respond($breakpont) {
+
+    // 600px
+    @if $breakpont ==phone {
+        @media (max-width: 37.5em) {
+            //600px
+            @content
+        }
+    }
+
+    @if $breakpont ==tab-port {
+        @media (max-width: 56.25em) {
+            //900px
+            @content
+        }
+    }
+
+    @if $breakpont ==tab-land {
+        @media (max-width: 75em) {
+            @content
+        }
+    }
+
+    @if $breakpont ==big-desctop {
+        @media (min-width: 112.5em) {
+            @content
+        }
+    }
+}
