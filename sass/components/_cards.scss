@@ -58,21 +58,21 @@
         border-top-right-radius: 3px;
 
         &--1 {
-            background-image: 
-            linear-gradient(to right bottom, $color-light-orange, $color-dark-orange), 
-            url('../img/nat-5.jpg');
+            background-image:
+                linear-gradient(to right bottom, $color-light-orange, $color-dark-orange),
+                url('../img/nat-5.jpg');
         }
 
         &--2 {
-            background-image: 
-            linear-gradient(to right bottom, $color-light-green, $color-dark-green), 
-            url('../img/nat-6.jpg');
+            background-image:
+                linear-gradient(to right bottom, $color-light-green, $color-dark-green),
+                url('../img/nat-6.jpg');
         }
 
         &--3 {
-            background-image: 
-            linear-gradient(to right bottom, $color-light-blue, $color-dark-blue), 
-            url('../img/nat-7.jpg');
+            background-image:
+                linear-gradient(to right bottom, $color-light-blue, $color-dark-blue),
+                url('../img/nat-7.jpg');
         }
     }
 
@@ -95,26 +95,23 @@
 
         &--1 {
             background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($color-light-orange, 0.85)), to(rgba($color-dark-orange, 0.85)));
-            background-image: linear-gradient(
-            to right bottom, 
-            rgba($color-light-orange, .85), 
-            rgba($color-dark-orange, .85));
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-light-orange, .85),
+                    rgba($color-dark-orange, .85));
         }
 
         &--2 {
             background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($color-light-green, 0.85)), to(rgba($color-dark-green, 0.85)));
-            background-image: linear-gradient(
-            to right bottom, 
-            rgba($color-light-green, .85), 
-            rgba($color-dark-green, .85));
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-light-green, .85),
+                    rgba($color-dark-green, .85));
         }
 
         &--3 {
             background-image: -webkit-gradient(linear, left top, right bottom, from(rgba($color-light-blue, 0.85)), to(rgba($color-dark-blue, 0.85)));
-            background-image: linear-gradient(
-            to right bottom, 
-            rgba($color-light-blue, .85), 
-            rgba($color-dark-blue, .85));
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-light-blue, .85),
+                    rgba($color-dark-blue, .85));
         }
     }
 
@@ -159,5 +156,54 @@
     &__price-value {
         font-size: 6rem;
         font-weight: 100;
+    }
+
+    @include respond(tab-port) {
+        // Functionality
+        border-radius: $border-radius-small;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        height: auto;
+        background-color: $color-white;
+
+        &__side {
+            position: relative;
+            height: auto;
+            box-shadow: none;
+
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        .__details {
+            padding: 1rem 3rem;
+        }
+
+        // Back side styling
+        &__cta {
+            position: relative;
+            padding: 7rem 4rem 4rem 4rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: translate(0);
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-only {
+            font-size: 1.5rem;
+        }
+
+        &__price-value {
+            font-size: 4rem;
+        }
     }
 }

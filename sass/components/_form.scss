@@ -16,6 +16,10 @@
       background-color: rgba($color-white, 1);
       transition: border-bottom .3s;
 
+      @include respond(tab-port) {
+         width: 100%;
+      }
+
       &:focus {
          outline: none;
          box-shadow: 0 1rem 2rem rgba($color-black, .1);
@@ -49,6 +53,11 @@
    &__radio {
       display: inline-block;
       width: 49%;
+
+      @include respond(tab-port) {
+         width: 100%;
+         margin-bottom: 1rem;
+      }
 
       &-input {
          display: none;
@@ -84,7 +93,7 @@
          }
       }
 
-      &-input:checked ~ &-label &-btn::after {
+      &-input:checked~&-label &-btn::after {
          opacity: 1;
       }
    }

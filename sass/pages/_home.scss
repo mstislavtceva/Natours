@@ -62,8 +62,28 @@
         url("../img/nat-10.jpg");
     background-size: 100%;
 
+    @include respond(tab-land) {
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 65%, transparent 65%),
+            url("../img/nat-10.jpg");
+        background-size: cover;
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(to right, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%),
+            url("../img/nat-10.jpg");
+        background-size: cover;
+    }
+
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 70%;
+        }
+
+        @include respond(tab-land) {
+            width: 100%;
+        }
     }
 }
