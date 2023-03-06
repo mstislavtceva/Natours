@@ -1,16 +1,16 @@
 @mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
-@mixin center-horizonral-vertical ($top, $left, $transform) {
-    position: absolute;
-    top: $top;
-    left: $left;
-    transform: $transform;
+@mixin center-horizonral-vertical($top, $left, $transform) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: $transform;
 }
 
 // MEDIA QUERY MANAGER
@@ -30,31 +30,33 @@ $breakpoint arguemnt choices
 1em = 16px
 */
 @mixin respond($breakpont) {
-
-    // 600px
-    @if $breakpont ==phone {
-        @media (max-width: 37.5em) {
-            //600px
-            @content
-        }
+  @if $breakpont ==desctop {
+    @media only screen and (max-width: 112.5em) {
+      @content;
     }
+  }
 
-    @if $breakpont ==tab-port {
-        @media (max-width: 56.25em) {
-            //900px
-            @content
-        }
+  @if $breakpont ==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
     }
+  }
 
-    @if $breakpont ==tab-land {
-        @media (max-width: 75em) {
-            @content
-        }
+  @if $breakpont ==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
     }
+  }
 
-    @if $breakpont ==big-desctop {
-        @media (min-width: 112.5em) {
-            @content
-        }
+  @if $breakpont ==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
     }
+  }
+
+  @if $breakpont ==big-desctop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
 }
